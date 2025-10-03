@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: hsl(221, 100%, 96%);
+    min-height: 100vh; /* Use min-height instead of fixed height for flexibility */
+    padding: 20px; /* Add padding to prevent content touching screen edges */
+}
+
+.all-design {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px; /* Use max-width instead of fixed width for responsiveness */
+    width: 100%; /* Take full available width up to max-width */
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 450px; /* Set minimum height to maintain design proportions */
+    border-radius: 30px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    overflow: hidden; /* Prevent content from overflowing rounded corners */
+}
+
+.summary,
+.results h3 {
+    font-weight: bold;
+    font-size: clamp(18px, 2vw, 24px); /* Responsive font size that scales with viewport */
+}
+
+.summary{
+    margin-bottom: 20px;
+}
+
+.contents,
+.results {
+    width: 50%; /* Each section takes half the container */
+    height: auto; /* Flexible height based on content */
+    display: flex;
+    flex-direction: column;
+    padding: clamp(20px, 4vw, 40px); /* Responsive padding that scales */
+    justify-content: space-between; /* Distribute space evenly between children */
+}
+
+.contents div div:last-child span:first-child{
+    margin-right: 7px;
+    color: black;
+}
+
+.contents div div:last-child span:last-child{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.results {
+    align-items: center;
+    background-image: linear-gradient(
+        to bottom,
+        hsl(252, 100%, 67%) 0%,
+        hsl(241, 72%, 46%) 100%
+    );
+    color: white;
+    text-align: center; /* Center align all text in results section */
+    border-radius: 30px
+}
+
+.results h3 {
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent white for better contrast */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.results p {
+    color: rgba(255, 255, 255, 0.6); /* Slightly more transparent for body text */
+    font-size: clamp(14px, 1.5vw, 18px); /* Responsive font size */
+    line-height: 1.4; /* Improve readability with better line spacing */
+    max-width: 250px; /* Limit text width for better readability */
+}
+
+.as-numbers {
+    width: clamp(120px, 18vw, 180px); /* Responsive circle size */
+    height: clamp(120px, 18vw, 180px); /* Maintain aspect ratio */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%; /* Create perfect circle */
+    background-image: linear-gradient(
+        to bottom,
+        hsl(256, 72%, 46%) 0%,
+        hsla(241, 72%, 46%, 0) 100%
+    );
+    margin: 20px 0; /* Vertical spacing */
+}
+
+.as-numbers h1 {
+    font-size: clamp(3rem, 8vw, 4.5rem); /* Large, responsive score number */
+    font-weight: 800;
+    line-height: 1; /* Remove extra line height */
+}
+
+.as-numbers p {
+    font-size: clamp(14px, 2vw, 18px); /* Responsive "of 100" text */
+    color: rgba(255, 255, 255, 0.5); /* More transparent for secondary text */
+}
+
+.contents > div {
+    width: 100%;
+    height: auto; /* Flexible height */
+    min-height: 55px; /* Minimum touch target size */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(12px, 2vw, 16px); /* Responsive padding */
+    border-radius: 10px;
+    margin-bottom: 16px; /* Consistent spacing between items */
+    font-size: clamp(14px, 1.8vw, 18px); /* Responsive font size */
+    font-weight: bold;
+}
+
+.contents > div div {
+    display: flex;
+    align-items: center;
+}
+
+.contents > div div i {
+    padding-right: clamp(10px, 2vw, 20px); /* Responsive icon spacing */
+}
+
+/* Category-specific styles with semi-transparent backgrounds */
+.contents .reaction div {
+    color: hsl(0, 100%, 67%);
+}
+
+.contents .reaction {
+    background-color: hsla(0, 100%, 67%, 0.05); /* Very light red background */
+}
+
+.contents .memory div {
+    color: hsl(39, 100%, 56%);
+}
+
+.contents .memory {
+    background-color: hsla(39, 100%, 56%, 0.05); /* Very light yellow background */
+}
+
+.contents .verbal div {
+    color: hsl(166, 100%, 37%);
+}
+
+.contents .verbal {
+    background-color: hsla(166, 100%, 37%, 0.05); /* Very light green background */
+}
+
+.contents .visual div {
+    color: hsl(234, 85%, 45%);
+}
+
+.contents .visual {
+    background-color: hsla(234, 85%, 45%, 0.05); /* Very light blue background */
+}
+
+.contents button {
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    padding: clamp(12px, 2vw, 18px); /* Responsive button padding */
+    background-color: hsl(224, 30%, 27%); /* Dark blue background */
+    border-radius: 30px;
+    color: white;
+    width: 100%;
+    font-size: clamp(14px, 1.8vw, 18px); /* Responsive button text */
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.contents button:hover {
+    background-color: hsl(241, 81%, 54%); /* Change color on hover */
+}
+
+.score {
+    color: hsl(224, 30%, 27%); /* Dark text for scores */
+}
+
+.score span {
+    color: hsla(224, 30%, 27%, 0.5); /* Lighter color for "out of" text */
+}
+
+/* Mobile Responsiveness - Tablet and smaller screens */
+@media screen and (max-width: 375px) {
+    .all-design {
+        flex-direction: column; /* Stack sections vertically on mobile */
+        border-radius: 0; /* Remove rounded corners on mobile */
+        box-shadow: none; /* Remove shadow for full-width mobile layout */
+        min-height: 100vh; /* Take full viewport height */
+    }
+
+    .contents,
+    .results {
+        width: 100%; /* Full width sections on mobile */
+        height: auto;
+        padding: 30px 25px; /* Adjusted padding for mobile */
+    }
+
+    .results {
+        border-radius: 0 0 30px 30px; /* Only round bottom corners */
+        padding-top: 40px; /* Extra top padding */
+        padding-bottom: 40px; /* Extra bottom padding */
+    }
+
+    .results p {
+        max-width: 300px; /* Slightly wider text on mobile */
+    }
+
+    .contents {
+        padding-top: 25px;
+        padding-bottom: 30px;
+    }
+
+    .contents > div {
+        margin-bottom: 16px; /* Maintain consistent spacing */
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0; /* Remove body padding for edge-to-edge design */
+        align-items: flex-start; /* Align to top on very small screens */
+    }
+
+    .all-design {
+        min-height: 100vh; /* Full viewport height */
+        border-radius: 0; /* No rounded corners */
+    }
+
+    .contents,
+    .results {
+        padding: 25px 20px; /* Slightly reduced padding on small screens */
+    }
+
+    .results {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .as-numbers {
+        width: 140px; /* Fixed smaller size for very small screens */
+        height: 140px;
+    }
+}
+
+/* Large screen adjustments */
+@media screen and (min-width: 1200px) {
+    .all-design {
+        max-width: 850px; /* Slightly larger on big screens */
+    }
+}
+
+/* Prevent text size adjustment on mobile */
+html {
+    -webkit-text-size-adjust: 100%; /* Prevent iOS Safari from zooming text */
+}
